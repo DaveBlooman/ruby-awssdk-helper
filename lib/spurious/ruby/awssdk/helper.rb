@@ -20,20 +20,20 @@ module Spurious
           {
             "spurious-dynamo" => [
               {
-                "Host"     => ENV['DYNAMODB.SPURIOUS.LOCALHOST_NAME'].split('/').last,
-                "HostPort" => URI(ENV['DYNAMODB.SPURIOUS.LOCALHOST_PORT']).port
+                "Host"     => "dynamo.spurious.localhost",
+                "HostPort" => 3000
               }
             ],
             "spurious-sqs" => [
               {
-                "Host"     => ENV['SQS.SPURIOUS.LOCALHOST_NAME'].split('/').last,
-                "HostPort" => URI(ENV['SQS.SPURIOUS.LOCALHOST_PORT']).port
+                "Host"     => "sqs.spurious.localhost",
+                "HostPort" => 4568
               }
             ],
             "spurious-s3" => [
               {
-                "Host"     => ENV['S3.SPURIOUS.LOCALHOST_NAME'].split('/').last,
-                "HostPort" => URI(ENV['S3.SPURIOUS.LOCALHOST_PORT']).port
+                "Host"     => "s3.spurious.localhost",
+                "HostPort" => 4569
               }
             ]
           }
@@ -52,7 +52,6 @@ module Spurious
           strategy ||= Spurious::Ruby::Awssdk::Strategy.new(true)
           strategy.apply(config(type))
         end
-
       end
     end
   end
