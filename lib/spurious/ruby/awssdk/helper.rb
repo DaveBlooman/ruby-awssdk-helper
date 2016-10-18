@@ -32,7 +32,7 @@ module Spurious
             ],
             "spurious-s3" => [
               {
-                "Host"     => "s3.spurious.localhost",
+                "Host"     => "s3.amazonaws.com",
                 "HostPort" => 4569
               }
             ]
